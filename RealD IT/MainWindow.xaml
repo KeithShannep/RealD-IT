@@ -5,8 +5,99 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RealD_IT"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="RealD IT" Height="466" Width="800" Background="#FF00ADEF">
     <Grid>
-        
+        <TabControl HorizontalAlignment="Left" Height="436" VerticalAlignment="Top" Width="792" Background="#FF00ADEF">
+            <TabItem x:Name="Tab1" Header="Helpdesk">
+                <Grid Background="#FF7D868C" Margin="-10,-5,-8,-6">
+                    <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="525,356,0,0" VerticalAlignment="Top" Width="100" Click="Submit_Click_1" Height="32" TabIndex="10"/>
+                    <Button x:Name="Cancel" Content="Cancel " HorizontalAlignment="Left" Margin="662,356,0,0" VerticalAlignment="Top" Width="100" Click="Cancel_Click" Height="32" TabIndex="11"/>
+                    <Label Content="Name:" Margin="16,8,0,0" FontWeight="Bold" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Width="102" Height="26" VerticalAlignment="Top"/>
+                    <Label Content="Location:" Margin="158,8,0,0" FontWeight="Bold" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Width="102" Height="26" VerticalAlignment="Top"/>
+                    <Label Content="Status:" HorizontalAlignment="Left" Margin="158,128,0,0" VerticalAlignment="Top" Width="102" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                    <Label Content="Category:" HorizontalAlignment="Left" Margin="16,128,0,0" VerticalAlignment="Top" Width="102" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="NameBox" Margin="8,34,0,0" TextWrapping="Wrap" SpellCheck.IsEnabled="True" TabIndex="1" ToolTip="Customer Name" HorizontalAlignment="Left" Width="110" Height="25" VerticalAlignment="Top"/>
+                    <RichTextBox x:Name="IssueBox" Margin="275,41,0,0" SpellCheck.IsEnabled="True" TabIndex="8" ToolTip="What is the issue, be as discriptive as possible" HorizontalAlignment="Left" Width="235" Height="347" VerticalAlignment="Top">
+                        <FlowDocument/>
+                    </RichTextBox>
+                    <Label Content="Priority:" HorizontalAlignment="Left" Margin="16,64,0,0" VerticalAlignment="Top" Width="102" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                    <Label Content="Department:" Margin="158,62,512,300" FontWeight="Bold" HorizontalContentAlignment="Right" Width="102"/>
+                    <ComboBox x:Name="LocationBox" Margin="150,34,0,0" TabIndex="2" ToolTip="Office Location" HorizontalAlignment="Left" Width="110" Height="25" VerticalAlignment="Top">
+                        <ComboBoxItem Content="Boulder"/>
+                        <ComboBoxItem Content="Bevery Hills"/>
+                        <ComboBoxItem Content="Beijing"/>
+                        <ComboBoxItem Content="Hong Kong"/>
+                        <ComboBoxItem Content="Korea"/>
+                        <ComboBoxItem Content="London"/>
+                        <ComboBoxItem Content="Moscow"/>
+                        <ComboBoxItem Content="Oxford"/>
+                        <ComboBoxItem Content="Shanghai"/>
+                        <ComboBoxItem Content="Taiwan"/>
+                        <ComboBoxItem Content="Tokyo"/>
+                    </ComboBox>
+                    <ComboBox x:Name="PriorityBox" HorizontalAlignment="Left" Margin="8,93,0,0" VerticalAlignment="Top" Width="110" Height="25" TabIndex="3" SelectedIndex="0" HorizontalContentAlignment="Center">
+                        <ComboBoxItem Content="Low"/>
+                        <ComboBoxItem Content="Medium"/>
+                    </ComboBox>
+                    <ComboBox x:Name="StatusBox" HorizontalAlignment="Left" Margin="150,154,0,0" VerticalAlignment="Top" Width="110" Height="25" TabIndex="6" SelectedIndex="0" HorizontalContentAlignment="Center">
+                        <ComboBoxItem Content="New"/>
+                        <ComboBoxItem Content="Opened"/>
+                        <ComboBoxItem Content="Reopened"/>
+                        <ComboBoxItem Content="Closed"/>
+                    </ComboBox>
+                    <ComboBox x:Name="CategoryBox" HorizontalAlignment="Left" Margin="8,154,0,0" VerticalAlignment="Top" Width="110" Height="25" TabIndex="5" ToolTip="Category of issue" HorizontalContentAlignment="Center">
+                        <ComboBoxItem Content="Account::AD Change"/>
+                        <ComboBoxItem Content="Account::Password reset"/>
+                        <ComboBoxItem Content="Autonomy"/>
+                        <ComboBoxItem Content="Email"/>
+                        <ComboBoxItem Content="Filesite"/>
+                        <ComboBoxItem Content="Hardware"/>
+                        <ComboBoxItem Content="IT PRK"/>
+                        <ComboBoxItem Content="IT URF"/>
+                        <ComboBoxItem Content="Salesforce"/>
+                        <ComboBoxItem Content="Software"/>
+                        <ComboBoxItem Content="MAS500"/>
+                        <ComboBoxItem Content="Network"/>
+                        <ComboBoxItem Content="Phone::Desk"/>
+                        <ComboBoxItem Content="Phone::Mobile"/>
+                        <ComboBoxItem Content="Printer"/>
+                        <ComboBoxItem Content="RealD Life"/>
+                        <ComboBoxItem Content="Security Badge"/>
+                        <ComboBoxItem Content="VPN"/>
+                        <ComboBoxItem Content="Other"/>
+                    </ComboBox>
+                    <ComboBox x:Name="DepartmentBox" Margin="150,93,0,0" TabIndex="4" ToolTip="" HorizontalAlignment="Left" Width="110" Height="25" VerticalAlignment="Top" HorizontalContentAlignment="Center">
+                        <ComboBoxItem Content="AR Finance "/>
+                        <ComboBoxItem Content="AP Finance"/>
+                        <ComboBoxItem Content="Human Resources"/>
+                        <ComboBoxItem Content="Facilities"/>
+                        <ComboBoxItem Content="Manufacturing"/>
+                    </ComboBox>
+                    <Label Content="Issue:" Margin="285,10,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="102" Height="26" VerticalAlignment="Top"/>
+                    <Label Content="Resolution " HorizontalAlignment="Left" Margin="585,185,0,0" VerticalAlignment="Top" Width="102" FontWeight="Bold"/>
+                    <RichTextBox x:Name="ResolutionBox" Margin="525,216,0,0" SpellCheck.IsEnabled="True" TabIndex="9" ToolTip="What is the issue, be as discriptive as possible" HorizontalAlignment="Left" Width="237" Height="135" VerticalAlignment="Top">
+                        <FlowDocument/>
+                    </RichTextBox>
+                    <ListBox x:Name="AttachmentBox" HorizontalAlignment="Left" Height="159" Margin="8,229,0,0" VerticalAlignment="Top" Width="252" Drop="AttachmentBox_Drop" AllowDrop="True" TabIndex="0" ToolTip="Drag and drop attachments" KeyDown="AttachmentBox_KeyDown"/>
+                    <Label Content="Attachments:" HorizontalAlignment="Left" Margin="16,198,0,0" VerticalAlignment="Top" Width="102" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                    <Button x:Name="Attachmentbutton" Content="Add Attachment" Margin="150,198,0,0" IsCancel="True" TabIndex="7" Height="26" HorizontalAlignment="Left" Width="110" VerticalAlignment="Top" Click="Attachmentbutton_Click"/>
+                    <Image Margin="515,10,10,344" Source="RealDlogo.png" Stretch="Fill"/>
+                    <Label Content="adfl;af'l;kda'f;lkd;fl'kdas;'lfkasd &#xD;&#xA;" HorizontalAlignment="Left" Margin="537,75,0,0" VerticalAlignment="Top" Width="225" Height="110"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Tab2" Header="URF" Margin="-2,-2,2,-1">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="Tab2_Copy" Header="PRF" Margin="-2,-2,2,-1">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="Tab2_Copy1" Header="Tools" Margin="-2,-2,2,-1">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="Tab2_Copy2" Header="Info" Margin="-2,-2,2,-1">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
